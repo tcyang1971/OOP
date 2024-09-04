@@ -21,6 +21,27 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         txv = findViewById(R.id.txv)
-        txv.text = "物件導向實例"
+        //txv.text = "物件導向實例"
+        var result: String = ""
+        var abap = Course()
+        abap.CourseTitle = "ABAP程式設計"
+        abap.CreditProgram = "智慧企業"
+        abap.SAP = true
+        result += abap.Display()
+        txv.text = result
+    }
+}
+
+class Course{
+    var CourseTitle: String = ""
+    var CreditProgram: String = ""
+    var SAP: Boolean = true
+
+    fun Display(): String{
+        var info:String = CourseTitle + ":"
+        info += CreditProgram + "學程"
+        if (SAP) info+= " (搭配SAP系統授課)"
+        info+= "\n\n"
+        return info
     }
 }
