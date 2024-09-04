@@ -100,11 +100,17 @@ interface A{
     fun Sound():String { return "～叭噗" }
 }
 
-class Car: A {
+interface B{
+    fun Sound():String{ return "～嗶嗶" }
+}
+
+
+class Car: A, B {
     override fun Sound(): String {
-        return "汽車叭叭叭" + super.Sound()
+        return "汽車叭叭叭"
     }
 }
+
 
 class Cat: A {
     override fun Sound():String {
