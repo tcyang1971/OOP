@@ -24,6 +24,9 @@ class MainActivity : AppCompatActivity() {
 
         var result: String = ""
         var abap = Course("ABAP程式設計", "智慧企業")
+        //abap.x = "X"
+        //abap.y = "Y" //y是private
+
         result += Course.Add() + abap.Display()
 
         var app = Course("行動應用軟體開發", "人工智慧應用", false)
@@ -36,6 +39,10 @@ class MainActivity : AppCompatActivity() {
 class Course(var CourseTitle: String= "",
              var CreditProgram: String = "",
              var SAP: Boolean = true){
+
+    //public/private測試
+    var x: String = ""
+    private var y: String = ""
 
     init {
         this.CourseTitle = CourseTitle + "課程"
