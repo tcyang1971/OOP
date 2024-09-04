@@ -38,6 +38,10 @@ class MainActivity : AppCompatActivity() {
         var George = Student("George","資管系")
         result += George.Hello() + George.Work()
 
+        var McQueen = Car()
+        var Kitty = Cat()
+        result+= McQueen.Sound() + "\n" + Kitty.Sound()
+
         txv.text = result
 
     }
@@ -90,3 +94,21 @@ class Student(Name:String, dep:String):Teacher(Name,dep){
         return "就讀於" + dep + "\n\n"
     }
 }
+
+
+interface A{
+    fun Sound():String
+}
+
+class Car: A {
+    override fun Sound(): String {
+        return "汽車叭叭叭"
+    }
+}
+
+class Cat: A {
+    override fun Sound():String {
+        return "貓咪喵喵喵"
+    }
+}
+
