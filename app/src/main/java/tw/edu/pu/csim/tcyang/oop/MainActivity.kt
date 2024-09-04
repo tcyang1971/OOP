@@ -37,6 +37,10 @@ class Course(var CourseTitle: String= "",
              var CreditProgram: String = "",
              var SAP: Boolean = true){
 
+    init {
+        this.CourseTitle = CourseTitle + "課程"
+    }
+
     fun Display(): String{
         var info:String = CourseTitle + ":"
         info += CreditProgram + "學程"
