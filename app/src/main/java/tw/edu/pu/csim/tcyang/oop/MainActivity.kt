@@ -31,6 +31,9 @@ class MainActivity : AppCompatActivity() {
 
         var app = Course("行動應用軟體開發", "人工智慧應用", false)
         result += Course.Add() + app.Display()
+
+        var tcyang = Teacher("楊子青","資管系")
+        result += tcyang.Hello() + tcyang.Work()
         txv.text = result
 
     }
@@ -64,4 +67,16 @@ class Course(var CourseTitle: String= "",
         }
     }
 
+}
+
+open class Person(var Name:String){
+    open fun Hello():String{
+        return Name + "，您好！\n"
+    }
+}
+
+open class Teacher(Name:String, var dep:String):Person(Name){
+    open fun Work():String{
+        return "任職於" + dep + "\n\n"
+    }
 }
