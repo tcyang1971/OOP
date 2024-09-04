@@ -34,6 +34,10 @@ class MainActivity : AppCompatActivity() {
 
         var tcyang = Teacher("楊子青","資管系")
         result += tcyang.Hello() + tcyang.Work()
+
+        var George = Student("George","資管系")
+        result += George.Hello() + George.Work()
+
         txv.text = result
 
     }
@@ -78,5 +82,11 @@ open class Person(var Name:String){
 open class Teacher(Name:String, var dep:String):Person(Name){
     open fun Work():String{
         return "任職於" + dep + "\n\n"
+    }
+}
+
+class Student(Name:String, dep:String):Teacher(Name,dep){
+    override fun Work():String{
+        return "就讀於" + dep + "\n\n"
     }
 }
