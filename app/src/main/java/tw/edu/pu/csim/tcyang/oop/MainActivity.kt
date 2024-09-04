@@ -97,12 +97,12 @@ class Student(Name:String, dep:String):Teacher(Name,dep){
 
 
 interface A{
-    fun Sound():String
+    fun Sound():String { return "～叭噗" }
 }
 
 class Car: A {
     override fun Sound(): String {
-        return "汽車叭叭叭"
+        return "汽車叭叭叭" + super.Sound()
     }
 }
 
