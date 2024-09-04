@@ -21,21 +21,21 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         txv = findViewById(R.id.txv)
-        //txv.text = "物件導向實例"
+
         var result: String = ""
-        var abap = Course()
-        abap.CourseTitle = "ABAP程式設計"
-        abap.CreditProgram = "智慧企業"
-        abap.SAP = true
+        var abap = Course("ABAP程式設計", "智慧企業")
         result += abap.Display()
+
+        var app = Course("行動應用軟體開發", "人工智慧應用", false)
+        result += app.Display()
         txv.text = result
+
     }
 }
 
-class Course{
-    var CourseTitle: String = ""
-    var CreditProgram: String = ""
-    var SAP: Boolean = true
+class Course(var CourseTitle: String= "",
+             var CreditProgram: String = "",
+             var SAP: Boolean = true){
 
     fun Display(): String{
         var info:String = CourseTitle + ":"
