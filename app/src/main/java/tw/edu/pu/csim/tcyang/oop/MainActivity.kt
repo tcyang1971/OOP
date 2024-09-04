@@ -24,10 +24,10 @@ class MainActivity : AppCompatActivity() {
 
         var result: String = ""
         var abap = Course("ABAP程式設計", "智慧企業")
-        result += abap.Display()
+        result += Course.Add() + abap.Display()
 
         var app = Course("行動應用軟體開發", "人工智慧應用", false)
-        result += app.Display()
+        result += Course.Add() + app.Display()
         txv.text = result
 
     }
@@ -48,4 +48,13 @@ class Course(var CourseTitle: String= "",
         info+= "\n\n"
         return info
     }
+
+    companion object{
+        var count: Int = 0
+        fun Add():String{
+            count++
+            return "第" + count.toString() + "門課程：\n"
+        }
+    }
+
 }
