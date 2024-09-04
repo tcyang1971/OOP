@@ -107,7 +107,7 @@ interface B{
 
 class Car: A, B {
     override fun Sound(): String {
-        return "汽車叭叭叭"
+        return "汽車叭叭叭" + super<A>.Sound() + super<B>.Sound()
     }
 }
 
